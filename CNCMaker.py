@@ -2,6 +2,10 @@
 # -*- coding: iso-8859-1 -*-
 
 import Tkinter
+#import pocket_V1
+import subprocess
+
+
 
 class simpleapp_tk(Tkinter.Tk):
     def __init__(self,parent):
@@ -41,11 +45,15 @@ class simpleapp_tk(Tkinter.Tk):
 
     def OnButton1Click(self):
         self.labelVariable.set( self.entryVariable.get()+" pocket" )
+        #execfile("pocket_V1.py")
+	#pocket_V1.main() # do whatever is in test1.py
+        subprocess.call("./pocket_V1.py", shell=True)
         self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 
     def OnButton2Click(self):
         self.labelVariable.set( self.entryVariable.get()+" engrave" )
+        subprocess.call("./engrave-11.py", shell=True)
         self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 
