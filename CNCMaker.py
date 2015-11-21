@@ -18,28 +18,31 @@ class simpleapp_tk(Tkinter.Tk):
 
         self.entryVariable = Tkinter.StringVar()
         self.entry = Tkinter.Entry(self,textvariable=self.entryVariable)
-        self.entry.grid(column=0,row=0,sticky='EW')
+        #self.entry.grid(column=0,row=0,sticky='EW')
         self.entry.bind("<Return>", self.OnPressEnter)
-        self.entryVariable.set(u"Enter text here.")
+        self.entryVariable.set(u"")
 
         button1 = Tkinter.Button(self,text=u"pocket",
                                 command=self.OnButton1Click)
-        button1.grid(column=1,row=0)
+        button1.grid(column=0,row=0)
+        button1.config( height = 2, width = 10 )
 
         button2 = Tkinter.Button(self,text=u"engrave",
                                 command=self.OnButton2Click)
-        button2.grid(column=1,row=1)
+        button2.grid(column=0,row=1)
+        button2.config( height = 2, width = 10 )
 
         self.labelVariable = Tkinter.StringVar()
         label = Tkinter.Label(self,textvariable=self.labelVariable,
                               anchor="w",fg="white",bg="blue")
         label.grid(column=0,row=2,columnspan=2,sticky='EW')
-        self.labelVariable.set(u"Hello !")
+        self.labelVariable.set(u"Choose an option")
 
         self.grid_columnconfigure(0,weight=1)
-        self.resizable(True,False)
+        self.resizable(True,True)
         self.update()
-        self.geometry(self.geometry())       
+        #self.geometry(self.geometry())       
+        self.geometry('300x300')       
         self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 

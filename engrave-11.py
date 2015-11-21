@@ -33,8 +33,11 @@
 """
 version = '11'
 #fontfile = "/usr/share/qcad/fonts/romans2.cxf"
-fontfile = "/usr/share/qcad/fonts/romanc.cxf"
+#fontfile = "/usr/share/qcad/fonts/romanc.cxf"
 #fontfile = "/usr/share/qcad/fonts/normal.cxf"
+
+fontfile = "cxf-fonts/romanc.cxf"
+
 
 from Tkinter import *
 from math import *
