@@ -32,17 +32,32 @@ class simpleapp_tk(Tkinter.Tk):
         button2.grid(column=0,row=1)
         button2.config( height = 2, width = 10 )
 
+        button3 = Tkinter.Button(self,text=u"drill",
+                                command=self.OnButton3Click)
+        button3.grid(column=0,row=2)
+        button3.config( height = 2, width = 10 )
+
+        button4 = Tkinter.Button(self,text=u"grid",
+                                command=self.OnButton4Click)
+        button4.grid(column=0,row=3)
+        button4.config( height = 2, width = 10 )
+
+        button5 = Tkinter.Button(self,text=u"dxf2gcode",
+                                command=self.OnButton5Click)
+        button5.grid(column=0,row=4)
+        button5.config( height = 2, width = 10 )
+
         self.labelVariable = Tkinter.StringVar()
         label = Tkinter.Label(self,textvariable=self.labelVariable,
                               anchor="w",fg="white",bg="blue")
-        label.grid(column=0,row=2,columnspan=2,sticky='EW')
+        label.grid(column=0,row=10,columnspan=2,sticky='EW')
         self.labelVariable.set(u"Choose an option")
 
         self.grid_columnconfigure(0,weight=1)
         self.resizable(True,True)
         self.update()
         #self.geometry(self.geometry())       
-        self.geometry('300x300')       
+        self.geometry('600x400')       
         self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 
@@ -57,6 +72,24 @@ class simpleapp_tk(Tkinter.Tk):
     def OnButton2Click(self):
         self.labelVariable.set( self.entryVariable.get()+" engrave" )
         subprocess.call("./engrave-11.py", shell=True)
+        self.entry.focus_set()
+        self.entry.selection_range(0, Tkinter.END)
+
+    def OnButton3Click(self):
+        self.labelVariable.set( self.entryVariable.get()+" drill" )
+        subprocess.call("./drill.py", shell=True)
+        self.entry.focus_set()
+        self.entry.selection_range(0, Tkinter.END)
+
+    def OnButton4Click(self):
+        self.labelVariable.set( self.entryVariable.get()+" grid" )
+        subprocess.call("./grid_v1.py", shell=True)
+        self.entry.focus_set()
+        self.entry.selection_range(0, Tkinter.END)
+
+    def OnButton5Click(self):
+        self.labelVariable.set( self.entryVariable.get()+" dxf2gcode" )
+        subprocess.call("./dxf2gcode.py", shell=True)
         self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 
