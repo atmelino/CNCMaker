@@ -1,0 +1,5 @@
+DEBUG      root            <module>   1032:  - locale: en_US
+DEBUG      PostPro.PostProcessorConfig load_config 198 :  - read existing varspace '/media/data/public_html/CNCMaker/debian/usr/lib/cncmaker/dxf2gcode/postpro_config/postpro_config.cfg'
+DEBUG      root            <module>   1071:  - Started with following options:
+ArgumentParser(prog='dxf2gcode.py', usage=None, description=None, version=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+DEBUG      root            closeEvent 999 :  - Closing

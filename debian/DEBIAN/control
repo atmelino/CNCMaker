@@ -3,6 +3,7 @@ Version: 0.1
 Section: web
 Priority: optional
 Architecture: all
+Depends: python
 Maintainer: Tobias Berthold <nospam@nospam.com>
 Installed-Size: 2
 Description: G-Code utilities

@@ -1,0 +1,27 @@
+DEBUG      root            <module>   1032:  - locale: en_US
+DEBUG      PostPro.PostProcessorConfig load_config 198 :  - read existing varspace '/media/data/public_html/CNCMaker/dxf2gcode/postpro_config/postpro_config.cfg'
+DEBUG      root            <module>   1071:  - Started with following options:
+ArgumentParser(prog='dxf2gcode.py', usage=None, description=None, version=None, formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+INFO       root            OpenFileDialog 704 :  - File: /media/data/public_html/CNCMaker/dxfFiles/block14.dxf selected
+INFO       root            load       751 :  - Loading file: /media/data/public_html/CNCMaker/dxfFiles/block14.dxf
+DEBUG      DxfImport.Import Get_Line_Pairs 196 :  - Did read 804 of linepairs from DXF
+INFO       DxfImport.Import __init__   79  :  - Reading DXF Structure
+INFO       DxfImport.Import Read_Blocks 299 :  - Reading Block *Model_Space; Nr: 0
+DEBUG      DxfImport.Import Read_Blocks 308 :  - Found block pos Value 10 at: 721
+INFO       DxfImport.Import Read_Blocks 299 :  - Reading Block *Paper_Space; Nr: 1
+DEBUG      DxfImport.Import Read_Blocks 308 :  - Found block pos Value 10 at: 740
+INFO       DxfImport.Import __init__   94  :  - Creating Contours of Block Nr: 0
+INFO       DxfImport.Import __init__   94  :  - Creating Contours of Block Nr: 1
+INFO       DxfImport.Import __init__   97  :  - Creating Contours of Entities
+INFO       root            load       756 :  - Loaded layers: 1
+INFO       root            load       757 :  - Loaded blocks: 2
+INFO       root            load       761 :  - Block 0 includes 0 Geometries, reduced to 0 Contours, used layers: []
+INFO       root            load       761 :  - Block 1 includes 0 Geometries, reduced to 0 Contours, used layers: []
+INFO       root            load       765 :  - Loaded 1 entity geometries; reduced to 1 contours; used layers: [0]; number of inserts 0
+INFO       root            load       772 :  - Drawing units: millimeters
+DEBUG      Core.Shape      setNearestStPoint 180 :  - Clicked Point: X ->  0.000  Y ->  0.000
+DEBUG      Core.Shape      setNearestStPoint 182 :  - Old Start Point: X -> 20.000  Y -> -10.000
+DEBUG      Core.Shape      setNearestStPoint 191 :  - New Start Point: X ->  0.000  Y ->  0.000
+DEBUG      Core.Shape      AnalyseAndOptimize 171 :  - Analysing the shape for CW direction Nr: 0
+DEBUG      DxfImport.myCanvasClass autoscale  241 :  - Autoscaling to extend: PyQt4.QtCore.QRectF(0.0, -30.0, 42.0, 42.0)
+DEBUG      root            closeEvent 999 :  - Closing
