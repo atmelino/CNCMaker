@@ -46,6 +46,10 @@ class simpleapp_tk(Tkinter.Tk):
                                 command=self.OnButton5Click)
         button5.grid(column=0,row=4)
         button5.config( height = 2, width = 10 )
+	
+	# cad.py
+	# http://sourceforge.net/projects/cadpy/
+
 
         self.labelVariable = Tkinter.StringVar()
         label = Tkinter.Label(self,textvariable=self.labelVariable,
