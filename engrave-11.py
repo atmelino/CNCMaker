@@ -300,6 +300,21 @@ class Application(Frame):
         for line in self.gcode:
             self.clipboard_append(line+'\n')
 
+
+
+
+#=======================================================================
+   def SaveFile(self):
+	homedir=os.path.expanduser('~')
+	f = open(homedir+"/linuxcnc/nc_files/pocket.ngc","w") #opens file
+	#f = open("test.txt","w") #opens file with name of "test.txt"
+        for line in self.gcode:
+		f.write(line+'\n')
+	f.close()
+
+
+
+
 #=======================================================================
     def WriteToAxis(self):
         for line in self.gcode:

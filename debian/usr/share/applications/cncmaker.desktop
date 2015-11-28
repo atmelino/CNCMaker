@@ -5,7 +5,7 @@ Name=CNCMaker
 Exec=cncmaker.sh	
 Terminal=true
 Categories=Science
-Comment=Open-Source Simulation & Computer Aided Machining
+Comment=Collection of G-Code utilities for CNC machines
 Icon=cncmaker.png
 StartupNotify=true
 
