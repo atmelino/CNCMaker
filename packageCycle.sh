@@ -12,6 +12,7 @@ mv debian.deb cncmaker_0.1.deb
 #install
 sudo apt-get install python-qt4
 sudo dpkg -i cncmaker_0.1.deb
+sudo chmod 777 cncmaker_0.1.deb
 
 echo to start:
 echo call cncmaker.sh

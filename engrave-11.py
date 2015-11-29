@@ -183,7 +183,8 @@ class Application(Frame):
         self.st01 = Label(self.EntryFrame, text='Preamble')
         self.st01.grid(row=1, column=0)
         self.PreambleVar = StringVar()
-        self.PreambleVar.set('G17 G20 G90 G64 P0.003 M3 S3000 M7 F5')
+        #self.PreambleVar.set('G17 G20 G90 G64 P0.003 M3 S3000 M7 F5')
+        self.PreambleVar.set('G17 G21 G90 G64 P0.03 M3 S3000 M7 F100.00')
         self.Preamble = Entry(self.EntryFrame, textvariable=self.PreambleVar ,width=40)
         self.Preamble.grid(row=1, column=1)
 
@@ -226,14 +227,14 @@ class Application(Frame):
         self.st07 = Label(self.EntryFrame, text='XScale')
         self.st07.grid(row=7, column=0)
         self.XScaleVar = StringVar()
-        self.XScaleVar.set('0.04')
+        self.XScaleVar.set('1.0')
         self.XScale = Entry(self.EntryFrame, textvariable=self.XScaleVar ,width=15)
         self.XScale.grid(row=7, column=1)
 
         self.st08 = Label(self.EntryFrame, text='YScale')
         self.st08.grid(row=8, column=0)
         self.YScaleVar = StringVar()
-        self.YScaleVar.set('0.04')
+        self.YScaleVar.set('1.0')
         self.YScale = Entry(self.EntryFrame, textvariable=self.YScaleVar ,width=15)
         self.YScale.grid(row=8, column=1)
 
@@ -255,14 +256,14 @@ class Application(Frame):
         self.st12 = Label(self.EntryFrame, text='Engraving Depth')
         self.st12.grid(row=12, column=0)
         self.DepthVar = StringVar()
-        self.DepthVar.set('-0.010')
+        self.DepthVar.set('-1.00')
         self.Depth = Entry(self.EntryFrame, textvariable=self.DepthVar ,width=15)
         self.Depth.grid(row=12, column=1)
 
         self.st13 = Label(self.EntryFrame, text='Safe Z')
         self.st13.grid(row=13, column=0)
         self.SafeZVar = StringVar()
-        self.SafeZVar.set('+0.100')
+        self.SafeZVar.set('+0.50')
         self.SafeZ = Entry(self.EntryFrame, width=15, textvariable = self.SafeZVar)
         self.SafeZ.grid(row=13, column=1)
 
@@ -288,6 +289,11 @@ class Application(Frame):
         self.ToClipboard = Button(self.EntryFrame, text='To Clipboard', command=self.CopyClipboard)
         self.ToClipboard.grid(row=16, column=1)
 
+        self.SaveFile = Button(self.EntryFrame, text='Save File', command=self.SaveFile)
+        self.SaveFile.grid(row=16, column=2)
+
+
+
         if IN_AXIS:
             self.quitButton = Button(self, text='Write to AXIS and Quit',command=self.WriteToAxis)
         else:
@@ -304,10 +310,9 @@ class Application(Frame):
 
 
 #=======================================================================
-   def SaveFile(self):
+    def SaveFile(self):
 	homedir=os.path.expanduser('~')
-	f = open(homedir+"/linuxcnc/nc_files/pocket.ngc","w") #opens file
-	#f = open("test.txt","w") #opens file with name of "test.txt"
+	f = open(homedir+"/linuxcnc/nc_files/text.ngc","w") #opens file
         for line in self.gcode:
 		f.write(line+'\n')
 	f.close()
