@@ -47,6 +47,19 @@ class simpleapp_tk(Tkinter.Tk):
         button5.grid(column=0,row=4)
         button5.config( height = 2, width = 10 )
 	
+        button6 = Tkinter.Button(self,text=u"arc",
+                                command=self.OnButton6Click)
+        button6.grid(column=0,row=5)
+        button6.config( height = 2, width = 10 )
+	
+        button7 = Tkinter.Button(self,text=u"counterbore",
+                                command=self.OnButton7Click)
+        button7.grid(column=0,row=6)
+        button7.config( height = 2, width = 10 )
+	
+
+
+
 	# cad.py
 	# http://sourceforge.net/projects/cadpy/
 
@@ -99,6 +112,18 @@ class simpleapp_tk(Tkinter.Tk):
 	#subprocess.call(["ls", "-l"])        
 	subprocess.call(["python", "./dxf2gcode/dxf2gcode.py"])        
 	self.entry.focus_set()
+        self.entry.selection_range(0, Tkinter.END)
+
+    def OnButton6Click(self):
+        self.labelVariable.set( self.entryVariable.get()+" grid" )
+        subprocess.call("./arcgenm18.py", shell=True)
+        self.entry.focus_set()
+        self.entry.selection_range(0, Tkinter.END)
+
+    def OnButton7Click(self):
+        self.labelVariable.set( self.entryVariable.get()+" grid" )
+        subprocess.call("./counterbore.py", shell=True)
+        self.entry.focus_set()
         self.entry.selection_range(0, Tkinter.END)
 
     def OnPressEnter(self,event):
