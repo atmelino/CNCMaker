@@ -266,6 +266,10 @@ class Application(Frame):
         self.ToClipboard = Button(self.EntryFrame, text='To Clipboard', command=self.CopyClipboard)
         self.ToClipboard.grid(row=self.rownumber, column=1)
 
+        self.SaveFile = Button(self.EntryFrame, text='Save File', command=self.SaveFile)
+        self.SaveFile.grid(row=self.rownumber, column=2)
+
+
         if IN_AXIS:
             self.quitButton = Button(self, text='Write to AXIS and Quit',command=self.WriteToAxis)
         else:
@@ -685,6 +689,17 @@ class Application(Frame):
         self.clipboard_clear()
         for line in self.gcode:
             self.clipboard_append(line+'\n')
+
+
+    def SaveFile(self):
+        homedir=os.path.expanduser('~')
+        f = open(homedir+"/linuxcnc/nc_files/grid.ngc","w") #opens file
+        #f = open("test.txt","w") #opens file with name of "test.txt"
+        for line in self.gcode:
+            f.write(line+'\n')
+        f.close()
+
+
 
     def WriteToAxis(self):
         for line in self.gcode:
