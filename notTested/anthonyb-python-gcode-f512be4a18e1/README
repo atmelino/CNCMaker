@@ -1,0 +1,75 @@
+Python code to generate g-code
+------------------------------
+
+I've written this to generate g-code on my Shapeoko, and thought it may be 
+generally useful.
+
+WARNING: Alpha software! It's still early days, and I've haven't actually
+run some of this g-code on the mill, so take care and verify it or do a
+dry run before you trust anything that it outputs.
+
+If you spot a bug or have suggestions for improvement, let me know at
+anthony.briggs@gmail.com.
+
+There are tests - you'll need to install py.test to run them.
+---
+
+Usage is typically to write a short python script with the library,
+pipe the output to a file, then verify the g-code and run it (carefully)
+on your machine. If you set DEBUG to False and run init() you can
+send commands directly - I haven't done this, but it might be fun.
+
+Another warning: The code is essentially a bunch of macro commands:
+it doesn't do any bounds checking, and some commands (eg. move())
+may break your end mill if you try to move while embedded in a piece.
+Most of the higher level commands will pull out to safe_height once
+they're complete, but this is not guaranteed for some lower level ones.
+You are expected to know what you're doing!
+
+---
+
+Some example usage (also look in the examples folder):
+
+# import the library
+import cnc
+
+# initialise the machine, set up units, default feed rate, etc.
+cnc.init()
+
+# set any variables that are different
+cnc.tool_width = 1.68
+cnc.step_over = tool_width / 2
+cnc.step_down = tool_width / 2
+cnc.safe_height = 5.000
+cnc.com_port = "COM11"
+cnc.feedrate(500)
+
+# run jobs! positions are tuples: (x, y),
+# measurements are in mm/inches (whatever you've set it to)
+# and can be integers or floats (it's rounded to 3dp in the gcode)
+cnc.rapidmove((10, 10))
+cnc.drill((50, 100))
+cnc.line((50, 100), (50, 50), depth=3)
+
+# rectangle takes an 'offset' - default is on the line,
+# but you can specify 'inside' (pocket) or 'outside' (profile)
+cnc.rectangle((30, 30), (60, 60), 1, offset='outside')
+
+# fillrectangle is the same, but will mill out the whole area:
+cnc.rectangle((130, 130), (160, 160), 1, offset='inside')
+
+# 'dogbone' will mill out an 'inside' rectangle, and add pockets
+# on the top, right, bottom and/or left sides so that you can
+# fit another rectangle into it
+cnc.dogbone((30, 130), (60, 160), depth=3, sides=('top', 'bottom'))
+
+# you also have the full power of python at your disposal,
+# so you can use loops, lists, variables, etc.
+
+# eg. This code drills a grid of holes 25mm apart,
+# offset by 10mm from the x and y axes:
+positions = [0, 25, 50, 75, 100, 125, 150, 200]
+for x in positions:
+    for y in positions:
+        cnc.drill((x+10, y+10), depth=5)
+
