@@ -32,7 +32,7 @@ class simpleapp_tk(Tkinter.Tk):
         button2.grid(column=0,row=1)
         button2.config( height = 2, width = 10 )
 
-        button3 = Tkinter.Button(self,text=u"drill",
+        button3 = Tkinter.Button(self,text=u"drilling speed",
                                 command=self.OnButton3Click)
         button3.grid(column=0,row=2)
         button3.config( height = 2, width = 10 )

@@ -64,5 +64,6 @@ Improvements:
 sudo apt-get install python-qt4
 into the shell script packageCycle.sh.
 
+- need to log out and back in to get menu item into unity
 
 
