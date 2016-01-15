@@ -20,7 +20,7 @@ The way this works is that the files which will be included in the package have 
 
 I put these files under the folder named "debian":
 
-debian
+debian  
 ├── DEBIAN  
 │   └── control  
 └── usr  
@@ -28,29 +28,30 @@ debian
     │   └── cncmaker.sh  
     ├── lib  
     │   └── cncmaker  
-    │       ├── arcgenm18.py
-    │       ├── cad.py
-    │       ├── cncmaker.py
-    │       ├── counterbore.py
-    │       ├── cxf-fonts
-    │       │   └── (lots of files)
-    │       ├── drill.py
-    │       ├── dxf2gcode
-    │       │   └── (lots of files)
-    │       ├── dxfFiles
-    │       │   └── example.dxf
-    │       ├── engrave-11.py
-    │       ├── grid_v1.py
-    │       └── pocket_V1.py
-    └── share
-        ├── applications
-        │   └── cncmaker.desktop
-        ├── cncmaker
-        │   ├── changelog.Debian.gz
-        │   ├── changelog.gz
-        │   └── cncmaker.gif
-        └── pixmaps
-            └── cncmaker.png
+    │       ├── arcgenm18.py  
+    │       ├── cad.py  
+    │       ├── cncmaker.py  
+    │       ├── counterbore.py  
+    │       ├── cxf-fonts  
+    │       │   └── (lots of files)  
+    │       ├── drill.py  
+    │       ├── dxf2gcode  
+    │       │   └── (lots of files)  
+    │       ├── dxfFiles  
+    │       │   └── example.dxf  
+    │       ├── engrave-11.py  
+    │       ├── grid_v1.py  
+    │       └── pocket_V1.py  
+    └── share  
+        ├── applications  
+        │   └── cncmaker.desktop  
+        ├── cncmaker  
+        │   ├── changelog.Debian.gz  
+        │   ├── changelog.gz  
+        │   └── cncmaker.gif  
+        └── pixmaps  
+            └── cncmaker.png  
+
 
 ===================================
 Improvements:
