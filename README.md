@@ -8,8 +8,7 @@ Some of the files require the SciPy stack:
 
 http://www.scipy.org/install.html
 
-sudo apt-get install python-scipy
- python-numpy, python-scipy, python-tk, python-imaging-tk
+sudo apt-get install python-scipy python-numpy, python-scipy, python-tk, python-imaging-tk
 sudo apt-get install python-imaging-tk
 
 
@@ -22,36 +21,36 @@ The way this works is that the files which will be included in the package have 
 I put these files under the folder named "debian":
 
 debian
-+-- DEBIAN
-|   +-- control
-+-- usr
-    +-- bin
-    |   +-- cncmaker.sh
-    +-- lib
-    |   +-- cncmaker
-    |       +-- arcgenm18.py
-    |       +-- cad.py
-    |       +-- cncmaker.py
-    |       +-- counterbore.py
-    |       +-- cxf-fonts
-    |       |   +-- (lots of files)
-    |       +-- drill.py
-    |       +-- dxf2gcode
-    |       |   +-- (lots of files)
-    |       +-- dxfFiles
-    |       |   +-- example.dxf
-    |       +-- engrave-11.py
-    |       +-- grid_v1.py
-    |       +-- pocket_V1.py
-    +-- share
-        +-- applications
-        |   +-- cncmaker.desktop
-        +-- cncmaker
-        |   +-- changelog.Debian.gz
-        |   +-- changelog.gz
-        |   +-- cncmaker.gif
-        +-- pixmaps
-            +-- cncmaker.png
+├── DEBIAN  
+│   └── control  
+└── usr  
+    ├── bin  
+    │   └── cncmaker.sh  
+    ├── lib  
+    │   └── cncmaker  
+    │       ├── arcgenm18.py
+    │       ├── cad.py
+    │       ├── cncmaker.py
+    │       ├── counterbore.py
+    │       ├── cxf-fonts
+    │       │   └── (lots of files)
+    │       ├── drill.py
+    │       ├── dxf2gcode
+    │       │   └── (lots of files)
+    │       ├── dxfFiles
+    │       │   └── example.dxf
+    │       ├── engrave-11.py
+    │       ├── grid_v1.py
+    │       └── pocket_V1.py
+    └── share
+        ├── applications
+        │   └── cncmaker.desktop
+        ├── cncmaker
+        │   ├── changelog.Debian.gz
+        │   ├── changelog.gz
+        │   └── cncmaker.gif
+        └── pixmaps
+            └── cncmaker.png
 
 ===================================
 Improvements:
