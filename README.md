@@ -53,6 +53,11 @@ debian
             └── cncmaker.png  
 
 
+Development
+
+the shell script named packageCycle.sh creates a new debian package and installs it.
+
+
 ===================================
 Improvements:
 - The programs require the python-qt4 package. I haven't figured out yet how to make a debian package that requires another package, so for now, I have put the line
